@@ -44,7 +44,7 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 8%;
+padding:18px 7%;
 }
 
 /* LOGO */
@@ -52,18 +52,21 @@ padding:18px 8%;
 .logo{
 display:flex;
 align-items:center;
-gap:10px;
-font-size:30px;
+gap:8px;
+font-size:25px;
 font-weight:700;
 color:white;
+text-decoration:none;
+margin-left:-35px;
+white-space:nowrap;
 }
 
 .logo-icon{
 display:flex;
 align-items:center;
 justify-content:center;
-width:30px;
-height:30px;
+width:24px;
+height:24px;
 }
 
 .logo-pack{
@@ -81,16 +84,17 @@ color:#4cc9f0;
 
 .menu{
 display:flex;
-gap:25px;
+gap:18px;
 align-items:center;
 }
 
 .menu a{
 color:white;
 text-decoration:none;
-font-size:14px;
+font-size:13px;
 transition:0.3s;
 opacity:0.85;
+white-space:nowrap;
 }
 
 .menu a:hover{
@@ -381,6 +385,30 @@ margin-bottom:25px;
 color:#4cc9f0;
 }
 
+.hero h1 .hero-logo-pack{
+color:#4cc9f0;
+}
+
+.hero h1 .hero-logo-and{
+color:#ffffff;
+}
+
+.hero h1 .hero-logo-go{
+color:#4cc9f0;
+}
+  
+.hero-logo-pack{
+color:#4cc9f0;
+}
+
+.hero-logo-and{
+color:white;
+}
+
+.hero-logo-go{
+color:#4cc9f0;
+}
+  
 .hero p{
 font-size:19px;
 opacity:0.92;
@@ -490,7 +518,324 @@ color:#555;
 line-height:1.7;
 }
 
+#meus-destinos{
+padding-bottom:45px;
+} 
+
+/* DESTINOS - COVERFLOW 3D */
+
+.destinations-section{
+padding:70px 8% 45px;
+background:#f5f7fa;
+}
+
+.destinations-subtitle{
+max-width:720px;
+margin:-30px auto 35px;
+text-align:center;
+color:#555;
+font-size:17px;
+line-height:1.7;
+}
+
+.coverflow-wrapper{
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:22px;
+}
+
+.coverflow-stage{
+position:relative;
+width:100%;
+max-width:1100px;
+height:440px;
+perspective:1400px;
+overflow:hidden;
+}
+
+.coverflow-card{
+position:absolute;
+top:50%;
+left:50%;
+width:290px;
+background:white;
+border-radius:26px;
+overflow:hidden;
+box-shadow:0 18px 40px rgba(0,0,0,0.15);
+transform-style:preserve-3d;
+transition:transform 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
+opacity:0;
+pointer-events:none;
+}
+
+.coverflow-card img{
+width:100%;
+height:240px;
+object-fit:cover;
+display:block;
+}
+
+.coverflow-content{
+padding:20px;
+}
+
+.coverflow-content h3{
+font-size:24px;
+margin-bottom:10px;
+color:#0b2b3c;
+}
+
+.coverflow-content p{
+font-size:15px;
+line-height:1.6;
+color:#555;
+}
+
+.coverflow-tag{
+position:absolute;
+top:14px;
+left:14px;
+padding:8px 14px;
+border-radius:50px;
+font-size:12px;
+font-weight:600;
+background:rgba(76,201,240,0.92);
+color:white;
+backdrop-filter:blur(10px);
+z-index:2;
+}
+
+.coverflow-card.active{
+transform:translate(-50%, -50%) scale(1);
+opacity:1;
+z-index:5;
+pointer-events:auto;
+filter:blur(0);
+}
+
+.coverflow-card.prev{
+transform:translate(calc(-50% - 240px), -50%) rotateY(42deg) scale(0.88);
+opacity:0.85;
+z-index:4;
+filter:brightness(0.92);
+}
+
+.coverflow-card.next{
+transform:translate(calc(-50% + 240px), -50%) rotateY(-42deg) scale(0.88);
+opacity:0.85;
+z-index:4;
+filter:brightness(0.92);
+}
+
+.coverflow-card.far-prev{
+transform:translate(calc(-50% - 430px), -50%) rotateY(52deg) scale(0.72);
+opacity:0.45;
+z-index:3;
+filter:brightness(0.78);
+}
+
+.coverflow-card.far-next{
+transform:translate(calc(-50% + 430px), -50%) rotateY(-52deg) scale(0.72);
+opacity:0.45;
+z-index:3;
+filter:brightness(0.78);
+}
+
+.coverflow-card.hidden{
+transform:translate(-50%, -50%) scale(0.55);
+opacity:0;
+z-index:1;
+}
+
+.coverflow-btn{
+border:none;
+width:52px;
+height:52px;
+border-radius:50%;
+background:#071d2a;
+color:white;
+font-size:26px;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:0.3s;
+box-shadow:0 10px 24px rgba(0,0,0,0.18);
+}
+
+.coverflow-btn:hover{
+background:#4cc9f0;
+transform:translateY(-2px);
+}
+
+.coverflow-dots{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:20px;
+}
+
+.coverflow-dot{
+width:11px;
+height:11px;
+border-radius:50%;
+background:rgba(11,43,60,0.22);
+cursor:pointer;
+transition:0.3s;
+}
+
+.coverflow-dot.active{
+background:#4cc9f0;
+transform:scale(1.15);
+}  
+
+ /* MINHA JORNADA */
+
+.journey-section{
+background:#f5f7fa;
+padding:50px 8% 60px;
+}
+
+.journey-subtitle{
+max-width:760px;
+margin:-30px auto 50px;
+text-align:center;
+color:#555;
+font-size:17px;
+line-height:1.7;
+}
+
+.journey-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:16px;
+margin-bottom:35px;
+}
+
+.journey-card{
+position:relative;
+background:rgba(255,255,255,0.72);
+border:1px solid rgba(255,255,255,0.55);
+backdrop-filter:blur(12px);
+border-radius:22px;
+padding:24px 20px;
+box-shadow:0 12px 28px rgba(0,0,0,0.06);
+overflow:hidden;
+transition:0.4s;
+min-height:210px;
+}
+
+.journey-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 45px rgba(0,0,0,0.12);
+}
+
+.journey-icon{
+position:absolute;
+top:18px;
+right:18px;
+font-size:46px;
+opacity:0.12;
+filter:grayscale(20%);
+}
+
+.journey-card-salvos .journey-icon{
+top:16px;
+right:16px;
+font-size:42px;
+opacity:0.12;
+}
+
+.journey-card-blog .journey-icon{
+top:16px;
+right:16px;
+font-size:40px;
+opacity:0.12;
+}
+  
+.journey-card h3{
+font-size:16px;
+color:#0b2b3c;
+margin-bottom:14px;
+max-width:145px;
+padding-right:70px;
+min-height:58px;
+line-height:1.35;
+}
+
+.journey-card strong{
+display:block;
+font-size:36px;
+color:#4cc9f0;
+margin-bottom:6px;
+}
+
+.journey-card p{
+color:#555;
+font-size:13px;
+line-height:1.5;
+}
+
+.journey-experiences{
+background:#071d2a;
+border-radius:30px;
+padding:34px;
+box-shadow:0 20px 45px rgba(0,0,0,0.18);
+}
+
+.journey-experiences h3{
+color:white;
+font-size:26px;
+margin-bottom:24px;
+text-align:center;
+}
+
+.experience-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:22px;
+}
+
+.experience-card{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.12);
+border-radius:22px;
+padding:26px;
+backdrop-filter:blur(10px);
+transition:0.3s;
+}
+
+.experience-card:hover{
+transform:translateY(-6px);
+background:rgba(255,255,255,0.12);
+}
+
+.experience-card h4{
+color:white;
+font-size:18px;
+margin-bottom:12px;
+}
+
+.experience-card p{
+color:rgba(255,255,255,0.78);
+font-size:14px;
+line-height:1.7;
+}
+
+.empty-state{
+min-height:170px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+} 
+  
 /* FILTRO */
+
+.filter-section{
+padding-top:60px;
+}  
 
 .filter-section{
 background:#eef5fb;
@@ -604,6 +949,42 @@ transform:translateY(0);
 
 /* RESPONSIVO */
 
+@media(max-width:1100px){
+
+.journey-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.coverflow-stage{
+height:400px;
+}
+
+.coverflow-card{
+width:250px;
+}
+
+.coverflow-card img{
+height:210px;
+}
+
+.coverflow-card.prev{
+transform:translate(calc(-50% - 200px), -50%) rotateY(40deg) scale(0.84);
+}
+
+.coverflow-card.next{
+transform:translate(calc(-50% + 200px), -50%) rotateY(-40deg) scale(0.84);
+}
+
+.coverflow-card.far-prev{
+transform:translate(calc(-50% - 340px), -50%) rotateY(48deg) scale(0.68);
+}
+
+.coverflow-card.far-next{
+transform:translate(calc(-50% + 340px), -50%) rotateY(-48deg) scale(0.68);
+}  
+
+}  
+
 @media(max-width:768px){
 
 .hero h1{
@@ -626,6 +1007,92 @@ font-size:24px;
 font-size:24px;
 }
 
+.journey-section{
+padding:45px 6% 55px;
+}
+
+.journey-grid{
+grid-template-columns:1fr;
+gap:18px;
+} 
+
+.journey-subtitle{
+font-size:15px;
+margin:-25px auto 35px;
+}
+
+.journey-experiences{
+padding:28px;
+border-radius:24px;
+}
+
+.journey-card{
+min-height:auto;
+padding:26px 22px;
+}
+
+.journey-icon{
+font-size:44px;
+}
+
+.destinations-section{
+padding:55px 6% 40px;
+}
+
+.destinations-subtitle{
+font-size:15px;
+margin:-25px auto 25px;
+}
+
+.coverflow-wrapper{
+gap:10px;
+}
+
+.coverflow-stage{
+height:350px;
+}
+
+.coverflow-card{
+width:220px;
+}
+
+.coverflow-card img{
+height:180px;
+}
+
+.coverflow-content{
+padding:16px;
+}
+
+.coverflow-content h3{
+font-size:20px;
+}
+
+.coverflow-content p{
+font-size:14px;
+}
+
+.coverflow-btn{
+width:42px;
+height:42px;
+font-size:22px;
+}
+
+.coverflow-card.prev{
+transform:translate(calc(-50% - 130px), -50%) rotateY(30deg) scale(0.80);
+opacity:0.7;
+}
+
+.coverflow-card.next{
+transform:translate(calc(-50% + 130px), -50%) rotateY(-30deg) scale(0.80);
+opacity:0.7;
+}
+
+.coverflow-card.far-prev,
+.coverflow-card.far-next{
+opacity:0;
+}  
+  
 }
 
 </style>
@@ -638,7 +1105,7 @@ font-size:24px;
 
 <nav>
 
-<div class="logo">
+<a href="#home" class="logo">
 
 <div class="logo-icon">
 
@@ -663,15 +1130,17 @@ stroke-linejoin="round">
 <span class="logo-pack">Pack</span><span class="logo-and">and</span><span class="logo-go">Go</span>
 </div>
 
-</div>
+</a>
 
 <div class="menu">
 
-<a href="#">Home</a>
-<a href="#">Destinos</a>
-<a href="#">Passeios</a>
-<a href="#">Blog</a>
-<a href="#">Contato</a>
+<a href="#home">Home</a>
+<a href="#meus-destinos">Meus Destinos</a>
+<a href="#minha-jornada">Minha Jornada</a>
+<a href="#ultimas-experiencias">Últimas experiências</a>
+<a href="#inspiracoes">Inspirações</a>
+<a href="#blog">Blog</a>
+<a href="#suporte">Suporte</a>
 
 <div class="user-area" id="userArea">
 
@@ -829,7 +1298,7 @@ Cadastrar
 
 <div class="site-content" id="siteContent">
 
-<section class="hero">
+<section class="hero" id="home">
 
 <div class="hero-content">
 
@@ -845,7 +1314,7 @@ Cadastrar
 
 <h1>
 Explore o mundo com
-<span>PackandGo</span>
+<span class="hero-logo-pack">Pack</span><span class="hero-logo-and">and</span><span class="hero-logo-go">Go</span>
 </h1>
 
 <p>
@@ -870,57 +1339,73 @@ Planejar Viagem
 
 <!-- DESTINOS -->
 
-<section>
+<section id="meus-destinos" class="destinations-section">
 
 <h2 class="section-title">
 Destinos em destaque
 </h2>
 
-<div class="cards">
+<p class="destinations-subtitle">
+Explore destinos incríveis em uma experiência visual dinâmica.
+</p>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600">
-<div class="card-content">
+<div class="coverflow-wrapper">
+
+<button class="coverflow-btn" onclick="moveCoverflow(-1)">
+&#10094;
+</button>
+
+<div class="coverflow-stage" id="coverflowStage">
+
+<div class="coverflow-card">
+<span class="coverflow-tag">Praia</span>
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600" alt="Maldivas">
+<div class="coverflow-content">
 <h3>Maldivas</h3>
 <p>Praias paradisíacas e resorts luxuosos.</p>
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=1600">
-<div class="card-content">
+<div class="coverflow-card">
+<span class="coverflow-tag">Cultural</span>
+<img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=1600" alt="Paris">
+<div class="coverflow-content">
 <h3>Paris</h3>
 <p>Arte, cultura e gastronomia incrível.</p>
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600">
-<div class="card-content">
+<div class="coverflow-card">
+<span class="coverflow-tag">Natureza</span>
+<img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600" alt="Fernando de Noronha">
+<div class="coverflow-content">
 <h3>Fernando de Noronha</h3>
 <p>Natureza, aventura e praias inesquecíveis.</p>
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600">
-<div class="card-content">
+<div class="coverflow-card">
+<span class="coverflow-tag">Luxo</span>
+<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600" alt="Dubai">
+<div class="coverflow-content">
 <h3>Dubai</h3>
 <p>Luxo, tecnologia e experiências futuristas.</p>
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1600">
-<div class="card-content">
+<div class="coverflow-card">
+<span class="coverflow-tag">Urbano</span>
+<img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1600" alt="Tóquio">
+<div class="coverflow-content">
 <h3>Tóquio</h3>
 <p>Modernidade, cultura e vida noturna vibrante.</p>
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?q=80&w=1600">
-<div class="card-content">
+<div class="coverflow-card">
+<span class="coverflow-tag">Montanhas</span>
+<img src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?q=80&w=1600" alt="Suíça">
+<div class="coverflow-content">
 <h3>Suíça</h3>
 <p>Montanhas incríveis, lagos cristalinos e paisagens cinematográficas.</p>
 </div>
@@ -928,8 +1413,93 @@ Destinos em destaque
 
 </div>
 
-</section>
+<button class="coverflow-btn" onclick="moveCoverflow(1)">
+&#10095;
+</button>
 
+</div>
+
+<div class="coverflow-dots" id="coverflowDots"></div>
+
+</section>
+<!-- MINHA JORNADA -->
+
+<section class="journey-section" id="minha-jornada">
+
+<h2 class="section-title">
+Minha Jornada
+</h2>
+
+<p class="journey-subtitle">
+Acompanhe suas pesquisas, destinos salvos, viagens realizadas e experiências compartilhadas.
+</p>
+
+<div class="journey-grid">
+
+<div class="journey-card">
+<div class="journey-icon">🔎</div>
+<h3>Histórico de pesquisas</h3>
+<strong id="searchCount">0</strong>
+<p>Destinos pesquisados recentemente.</p>
+</div>
+
+<div class="journey-card journey-card-salvos">
+<div class="journey-icon">💙</div>
+<h3>Destinos salvos</h3>
+<strong id="savedCount">0</strong>
+<p>Lugares que você deseja conhecer.</p>
+</div>
+
+<div class="journey-card">
+<div class="journey-icon">✈️</div>
+<h3>Viagens realizadas</h3>
+<strong id="visitedCount">0</strong>
+<p>Destinos que você já visitou.</p>
+</div>
+
+<div class="journey-card">
+<div class="journey-icon">🧳</div>
+<h3>Viagens planejadas</h3>
+<strong id="plannedCount">0</strong>
+<p>Próximos destinos da sua lista.</p>
+</div>
+
+<div class="journey-card journey-card-blog">
+<div class="journey-icon">✍️</div>
+<h3>Publicações no Blog</h3>
+<strong id="blogCount">0</strong>
+<p>Experiências compartilhadas com outros viajantes.</p>
+</div>
+
+</div>
+
+<div class="journey-experiences" id="ultimas-experiencias">
+
+<h3>Últimas experiências</h3>
+
+<div class="experience-grid">
+
+<div class="experience-card empty-state">
+<h4>Nenhuma experiência registrada ainda</h4>
+<p>Salve destinos, marque viagens realizadas e compartilhe suas experiências no Blog.</p>
+</div>
+
+<div class="experience-card empty-state">
+<h4>Comece sua jornada</h4>
+<p>Explore os destinos em destaque e crie seu primeiro registro de viagem.</p>
+</div>
+
+<div class="experience-card empty-state">
+<h4>Suas memórias aparecerão aqui</h4>
+<p>Em breve, esta área exibirá suas viagens, fotos, dicas e relatos.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+  
 <!-- FILTRO -->
 
 <section class="filter-section">
@@ -993,7 +1563,7 @@ Filtro Avançado
 </section>
 <!-- INSPIRAÇÃO -->
 
-<section class="quotes-section">
+<section class="quotes-section" id="inspiracoes">
 
 <h2 class="section-title" style="color:white;">
 Inspiração
@@ -1069,13 +1639,41 @@ element.innerHTML = "👁️";
 
 function register(){
 
-const user = {
-name: document.getElementById("registerName").value,
-email: document.getElementById("registerEmail").value,
-password: document.getElementById("registerPassword").value
+const name = document.getElementById("registerName").value.trim();
+const email = document.getElementById("registerEmail").value.trim();
+const password = document.getElementById("registerPassword").value.trim();
+const cpf = document.getElementById("registerCPF").value.trim();
+
+if(name === "" || email === "" || password === "" || cpf === ""){
+alert("Por favor, preencha todos os campos.");
+return;
+}
+
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+const emailExists = users.some(user => user.email === email);
+const cpfExists = users.some(user => user.cpf === cpf);
+
+if(emailExists){
+alert("Este email já está cadastrado.");
+return;
+}
+
+if(cpfExists){
+alert("Este CPF já está cadastrado.");
+return;
+}
+
+const newUser = {
+name: name,
+email: email,
+password: password,
+cpf: cpf
 };
 
-localStorage.setItem("user", JSON.stringify(user));
+users.push(newUser);
+
+localStorage.setItem("users", JSON.stringify(users));
 
 alert("Cadastro realizado com sucesso!");
 
@@ -1085,19 +1683,21 @@ showLogin();
 
 function login(){
 
-const email =
-document.getElementById("loginEmail").value;
+const email = document.getElementById("loginEmail").value.trim();
+const password = document.getElementById("loginPassword").value.trim();
 
-const password =
-document.getElementById("loginPassword").value;
+if(email === "" || password === ""){
+alert("Por favor, preencha email e senha.");
+return;
+}
 
-const savedUser =
-JSON.parse(localStorage.getItem("user"));
+let users = JSON.parse(localStorage.getItem("users")) || [];
 
-if(
-savedUser.email === email &&
-savedUser.password === password
-){
+const savedUser = users.find(user => 
+user.email === email && user.password === password
+);
+
+if(savedUser){
 
 document.querySelector(".auth-container").style.display = "none";
 
@@ -1107,6 +1707,8 @@ document.getElementById("userArea").style.display = "flex";
 
 document.getElementById("userName").innerHTML =
 "👋 Olá, " + savedUser.name.split(" ")[0];
+
+localStorage.setItem("loggedUser", JSON.stringify(savedUser));
 
 }else{
 
@@ -1118,6 +1720,8 @@ alert("Email ou senha inválidos.");
 
 function logout(){
 
+localStorage.removeItem("loggedUser");
+
 document.querySelector(".auth-container").style.display = "flex";
 
 document.getElementById("siteContent").style.display = "none";
@@ -1127,6 +1731,147 @@ document.getElementById("userArea").style.display = "none";
 showLogin();
 
 }
+
+function checkLoggedUser(){
+
+const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+
+if(loggedUser){
+
+document.querySelector(".auth-container").style.display = "none";
+
+document.getElementById("siteContent").style.display = "block";
+
+document.getElementById("userArea").style.display = "flex";
+
+document.getElementById("userName").innerHTML =
+"👋 Olá, " + loggedUser.name.split(" ")[0];
+
+}
+
+}
+
+checkLoggedUser();
+
+/* COVERFLOW DESTINOS */
+
+const coverflowCards = Array.from(document.querySelectorAll(".coverflow-card"));
+const coverflowDotsContainer = document.getElementById("coverflowDots");
+
+let currentCoverflow = 0;
+let coverflowInterval;
+
+function normalizeCoverflowIndex(index){
+return (index + coverflowCards.length) % coverflowCards.length;
+}
+
+function createCoverflowDots(){
+
+if(!coverflowDotsContainer){
+return;
+}
+
+coverflowDotsContainer.innerHTML = "";
+
+coverflowCards.forEach((card, index) => {
+const dot = document.createElement("span");
+dot.classList.add("coverflow-dot");
+
+dot.addEventListener("click", () => {
+setCoverflow(index);
+});
+
+coverflowDotsContainer.appendChild(dot);
+});
+
+}
+
+function updateCoverflow(){
+
+if(coverflowCards.length === 0){
+return;
+}
+
+const prevIndex = normalizeCoverflowIndex(currentCoverflow - 1);
+const nextIndex = normalizeCoverflowIndex(currentCoverflow + 1);
+const farPrevIndex = normalizeCoverflowIndex(currentCoverflow - 2);
+const farNextIndex = normalizeCoverflowIndex(currentCoverflow + 2);
+
+coverflowCards.forEach((card, index) => {
+
+card.className = "coverflow-card";
+
+if(index === currentCoverflow){
+card.classList.add("active");
+}else if(index === prevIndex){
+card.classList.add("prev");
+}else if(index === nextIndex){
+card.classList.add("next");
+}else if(index === farPrevIndex){
+card.classList.add("far-prev");
+}else if(index === farNextIndex){
+card.classList.add("far-next");
+}else{
+card.classList.add("hidden");
+}
+
+});
+
+const dots = document.querySelectorAll(".coverflow-dot");
+
+dots.forEach((dot, index) => {
+dot.classList.toggle("active", index === currentCoverflow);
+});
+
+}
+
+function moveCoverflow(step){
+currentCoverflow = normalizeCoverflowIndex(currentCoverflow + step);
+updateCoverflow();
+restartCoverflowAuto();
+}
+
+function setCoverflow(index){
+currentCoverflow = index;
+updateCoverflow();
+restartCoverflowAuto();
+}
+
+function startCoverflowAuto(){
+
+if(coverflowCards.length === 0){
+return;
+}
+
+coverflowInterval = setInterval(() => {
+currentCoverflow = normalizeCoverflowIndex(currentCoverflow + 1);
+updateCoverflow();
+}, 4500);
+
+}
+
+function restartCoverflowAuto(){
+clearInterval(coverflowInterval);
+startCoverflowAuto();
+}
+
+createCoverflowDots();
+updateCoverflow();
+startCoverflowAuto();
+
+const coverflowWrapperElement = document.querySelector(".coverflow-wrapper");
+
+if(coverflowWrapperElement){
+
+coverflowWrapperElement.addEventListener("mouseenter", () => {
+clearInterval(coverflowInterval);
+});
+
+coverflowWrapperElement.addEventListener("mouseleave", () => {
+startCoverflowAuto();
+});
+
+}  
 
 /* SLIDER */
 
